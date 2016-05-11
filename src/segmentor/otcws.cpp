@@ -319,7 +319,7 @@ int customized_test(int argc, const char* argv[]) {
   bool evaluate = vm["evaluate"].as<bool>();
 
   CustomizedSegmentorFrontend frontend(input_file, model_file,
-      baseline_model_file, evaluate);
+      baseline_model_file, lexicon_file, evaluate);
   frontend.test();
   return 0;
 }
