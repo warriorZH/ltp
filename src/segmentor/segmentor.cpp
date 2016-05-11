@@ -231,8 +231,14 @@ void Segmentor::build_words(const std::vector<std::string>& chars,
 
 void Segmentor::load_lexicon(const char* filename, Model::lexicon_t* lexicon) const {
   std::ifstream ifs(filename);
-  if (!ifs.good()) { return; }
-  std::string line;
+  if (!ifs.good()) 
+	{ 
+		INFO_LOG("word list file name : %s", filename);
+		INFO_LOG("loading lexicon entries fail ~_~!!");
+		return; 
+	}
+  std::string line; 
+  
   while (std::getline(ifs, line)) {
     trim(line);
     std::string form = line.substr(0, line.find_first_of(" \t"));
