@@ -56,12 +56,14 @@ SegmentorFrontend::SegmentorFrontend(const std::string& reference_file,
 
 SegmentorFrontend::SegmentorFrontend(const std::string& input_file,
     const std::string& model_file,
+    const std::string& lexicon_file,
     bool evaluate,
     bool sequence_prob,
     bool marginal_prob)
   : timestamp(0), Frontend(kTest) {
   test_opt.test_file = input_file;
   test_opt.model_file = model_file;
+  test_opt.lexicon_file = lexicon_file;
   test_opt.evaluate = evaluate;
   test_opt.sequence_prob = sequence_prob;
   test_opt.marginal_prob = marginal_prob;
@@ -69,6 +71,7 @@ SegmentorFrontend::SegmentorFrontend(const std::string& input_file,
   INFO_LOG("||| ltp segmentor, testing ...");
   INFO_LOG("report: input file = %s", test_opt.test_file.c_str());
   INFO_LOG("report: model file = %s", test_opt.model_file.c_str());
+  INFO_LOG("report: lexicon file = %s", test_opt.lexicon_file.c_str());
   INFO_LOG("report: evaluate = %s", (test_opt.evaluate? "true": "false"));
   INFO_LOG("report: sequence probability = %s", (test_opt.sequence_prob? "true": "false"));
   INFO_LOG("report: marginal probability = %s", (test_opt.marginal_prob? "true":"false"));

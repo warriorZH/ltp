@@ -141,7 +141,7 @@ int test(int argc, const char* argv[]) {
   bool sequence_prob = vm["sequence"].as<bool>();
   bool marginal_prob = vm["marginal"].as<bool>();
 
-  SegmentorFrontend frontend(input_file, model_file, evaluate, sequence_prob, marginal_prob);
+  SegmentorFrontend frontend(input_file, model_file, lexicon_file, evaluate, sequence_prob, marginal_prob);
   frontend.test();
   return 0;
 }
