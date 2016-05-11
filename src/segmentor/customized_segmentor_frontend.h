@@ -35,6 +35,7 @@ public:
   CustomizedSegmentorFrontend(const std::string& input_file,
     const std::string& model_file,
     const std::string& baseline_model_file,
+    const std::string& lexicon_file,
     bool evaluate);
 
   //!
